@@ -1,0 +1,35 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}
+
+.font-small {
+  font-size: 0.75rem;
+}
+
+.product-cart-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  inset: 0;
+  background: rgba(0, 0, 0);
+}
+
+.opacity-small {
+  opacity: 3%;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "digitalify-api",
+  "description": "ecommerce api built with node.js & express.js",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node scripts/seeder.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "backend",
+    "api"
+  ],
+  "author": "Emad Kiani",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

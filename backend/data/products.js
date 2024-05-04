@@ -1,0 +1,95 @@
+const products = [
+  {
+    name: 'MacBook Air - Midnight',
+    description:
+      'Apple M3 chip with 8-core CPU, 8-core GPU, 16-core Neural Engine 8GB unified memory 256GB SSD storage 13.6-inch Liquid Retina display with True Tone² 1080p FaceTime HD camera MagSafe 3 charging port Two Thunderbolt / USB 4 ports 30W USB-C Power Adapter Backlit Magic Keyboard with Touch ID - US English.',
+    brand: 'Apple',
+    price: 1199.99,
+    salePrice: 1149.99,
+    countInStock: 5,
+    rating: 4.5,
+    numReviews: 9,
+    featured: true,
+    images: [{ url: 'macbook-1.webp' }, { url: 'macbook-2.webp' }],
+  },
+  {
+    name: 'iPad (Wi-Fi, 256GB) - Blue',
+    description:
+      'Striking 10.9-inch Liquid Retina display with True Tone A14 Bionic chip with 6-core CPU and 4-core GPU 12MP Wide back camera Landscape 12MP Ultra Wide front camera with Center Stage Touch ID for secure authentication and Apple Pay Stay connected with ultrafast Wi-Fi 6 USB-C connector for charging and accessories Go far with all-day battery life Works with Apple Pencil (1st generation) and Magic Keyboard Folio iPadOS 16 makes your iPad even more capable with powerful new productivity and collaboration features.',
+    brand: 'Apple',
+    price: 399.99,
+    salePrice: 399.99,
+    countInStock: 0,
+    rating: 3.5,
+    numReviews: 7,
+    featured: false,
+    images: [{ url: 'ipad-1.webp' }],
+  },
+  {
+    name: 'iPhone 15 (256 GB) - Blue',
+    description:
+      'Dynamic Island HDR display True Tone Wide color (P3) Haptic Touch 2,000,000:1 contrast ratio (typical) 1000 nits max brightness (typical); 1600 nits peak brightness (HDR); 2000 nits peak brightness (outdoor) Fingerprint-resistant oleophobic coating Support for display of multiple languages and characters simultaneously',
+    brand: 'Apple',
+    price: 799.99,
+    salePrice: 749.99,
+    countInStock: 5,
+    rating: 4.0,
+    numReviews: 9,
+    featured: true,
+    images: [{ url: 'iphone-1.webp' }, { url: 'iphone-2.webp' }],
+  },
+  {
+    name: '20W USB-C Power Adapter',
+    description:
+      'The Apple 20W USB-C Power Adapter offers fast, efficient charging at home, in the office, or on the go. While the power adapter is compatible with any USB-C enabled device, Apple recommends pairing it with the 11-inch iPad Pro and 12.9-inch iPad Pro (3rd generation) for optimal charging performance. You can also pair it with iPhone 8 or later to take advantage of the fast-charging feature. Charging cable sold separately.',
+    brand: 'Apple',
+    price: 19.99,
+    salePrice: 19.99,
+    countInStock: 3,
+    rating: 2.5,
+    numReviews: 5,
+    featured: false,
+    images: [{ url: 'adapter-1.webp' }, { url: 'adapter-2.webp' }],
+  },
+  {
+    name: 'Pencil (USB-C)',
+    description:
+      'Pairs and charges via USB-C Attaches magnetically Pixel-perfect precision Tilt sensitivity Imperceptible lag.',
+    brand: 'Apple',
+    price: 29.99,
+    salePrice: 29.99,
+    countInStock: 0,
+    rating: 3.0,
+    numReviews: 3,
+    featured: false,
+    images: [{ url: 'pencil-1.webp' }],
+  },
+  {
+    name: 'AirPods Pro (2nd Gen)',
+    description:
+      'Apple-designed H2 chip, the force behind AirPods Pro, pushes advanced audio performance even further. From smarter noise cancellation to superior three-dimensional sound and battery life, it improves on the best features of AirPods Pro in a big way. Low-distortion, custom-built driver and amplifier deliver crisp, clear high notes and deep, rich bass in stunning definition. Every sound is more vivid than ever. Adaptive Audio dynamically blends Transparency mode and Active Noise Cancellation to deliver the best listening experience for you in any environment. Up to 2x more Active Noise Cancellation than the previous-generation AirPods Pro, so you will hear dramatically less noise during your commute and when you need to focus Transparency mode lets outside sound in, so you can hear what is going on around you.',
+    brand: 'Apple',
+    price: 169.99,
+    salePrice: 129.99,
+    countInStock: 7,
+    rating: 4.0,
+    numReviews: 5,
+    featured: true,
+    images: [{ url: 'airpods-1.webp' }, { url: 'airpods-2.webp' }],
+  },
+  {
+    name: 'PlayStation 5',
+    description:
+      'The PS5 console unleashes new gaming possibilities that you never anticipated Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible PlayStation games Lightning Speed - Harness the power of a custom CPU, GPU and SSD with Integrated I/O that rewrite the rules of what a PlayStation console can do Stunning Games - marvel at incredible graphics and experience new PS5 features Breathtaking Immersion - discover a deeper gaming experience with support for haptic feedback, adaptive triggers, and 3D Audio technology.',
+    brand: 'Sony',
+    price: 499.99,
+    salePrice: 449.99,
+    countInStock: 5,
+    rating: 4.5,
+    numReviews: 7,
+    featured: true,
+    images: [{ url: 'ps5-1.webp' }, { url: 'ps5-2.webp' }],
+  },
+]
+
+export default products
