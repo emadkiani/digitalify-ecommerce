@@ -19,7 +19,8 @@ Digitalify is an e-commerce web app built with the MERN (MongoDB, Express.js, Re
 
 ## Features
 
-- Advanced product search & pagination
+- Advanced Product search feature
+- Product pagination
 - Full featured shopping cart
 - User profile with orders & order details page
 - Checkout process (shipping, payment method, etc)
@@ -39,14 +40,19 @@ Rename `.env.example` to `.env` in both frontend & backend folders and add your 
 
 ### Install Dependencies
 
+Open your terminal
+
 ```
 cd backend
 npm install
+cd ..
 cd frontend
 npm install
 ```
 
 ### Seed Database
+
+In backend directory
 
 ```
 npm run seed
@@ -54,16 +60,14 @@ npm run seed
 
 ### Run
 
-Open your terminal
+Open your terminal in backend directory
 
 ```
-cd backend
 npm run dev
 ```
 
-On a new terminal
+Open a new terminal in frontend directory
 
 ```
-cd frontend
 npm run dev
 ```
