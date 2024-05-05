@@ -1,1 +1,1 @@
-Feel free to explore the code and gain a better understanding of any part. The original code cannot be sold or used for either personal or commercial purposes.
+This is an open source project, and you are free to explore the code and gain a better understanding of any part. This project is not recommended for production critical applications. The original code cannot be sold or used for either personal or commercial purposes.
