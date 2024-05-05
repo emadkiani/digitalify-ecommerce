@@ -11,7 +11,7 @@ const AdvancedSearchBox = () => {
     minPrice: '',
     maxPrice: '',
     sortBy: '',
-    inStock: true,
+    inStock: 'on',
   })
 
   const searchHandler = (event) => {
@@ -19,10 +19,10 @@ const AdvancedSearchBox = () => {
     const formData = new FormData(event.currentTarget)
     const keyword = formData.get('keyword').trim()
     const categoryId = formData.get('category-id')
-    const maxPrice = formData.get('max-price') ? formData.get('max-price') : ''
-    const minPrice = formData.get('min-price') ? formData.get('min-price') : ''
+    const maxPrice = +formData.get('max-price')
+    const minPrice = +formData.get('min-price')
     const sortBy = formData.get('sort-by')
-    const inStock = formData.get('in-stock') ? formData.get('in-stock') : ''
+    const inStock = formData.get('in-stock')
 
     setSearchParams(
       (prev) => {
@@ -54,7 +54,7 @@ const AdvancedSearchBox = () => {
           defaultValue={searchParams.get('keyword')}
           name='keyword'
           type='search'
-          placeholder='Search'
+          placeholder='Keyword'
           aria-label='Search'
         />
       </Form.Group>
@@ -83,6 +83,7 @@ const AdvancedSearchBox = () => {
         <Form.Label>Max Price</Form.Label>
         <Form.Control
           size='sm'
+          placeholder='Maximom price'
           defaultValue={searchParams.get('maxPrice')}
           name='max-price'
           type='number'
@@ -94,6 +95,7 @@ const AdvancedSearchBox = () => {
         <Form.Label>Min Price</Form.Label>
         <Form.Control
           size='sm'
+          placeholder='Minimum price'
           defaultValue={searchParams.get('minPrice')}
           name='min-price'
           type='number'
@@ -102,7 +104,7 @@ const AdvancedSearchBox = () => {
       <Form.Group
         controlId='sort-by'
         className='mb-2'>
-        <Form.Label>Sort price</Form.Label>
+        <Form.Label>Sort by Price</Form.Label>
         <Form.Select
           size='sm'
           name='sort-by'>

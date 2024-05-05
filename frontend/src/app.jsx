@@ -5,7 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 
 import store from './store'
-import router from './routes/router'
+import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css'
 import './styles/global.css'

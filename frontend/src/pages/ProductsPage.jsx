@@ -15,7 +15,7 @@ const ProductsPage = () => {
     minPrice: '',
     maxPrice: '',
     sortBy: '',
-    inStock: true,
+    inStock: 'on',
   })
 
   const { data, isLoading, isError } = useSearchProductsQuery({

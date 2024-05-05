@@ -23,17 +23,17 @@ const searchProducts = asyncHandler(async (req, res) => {
     search.category = await Category.findById(req.query.categoryId)
   }
 
-  if (req.query.minPrice || req.query.maxPrice) {
+  if (+req.query.minPrice > 0 || +req.query.maxPrice > 0) {
     search.price = {}
-    if (req.query.minPrice) {
-      search.price.$gte = parseFloat(req.query.minPrice)
+    if (+req.query.minPrice > 0) {
+      search.price.$gte = parseFloat(+req.query.minPrice)
     }
-    if (req.query.maxPrice) {
-      search.price.$lte = parseFloat(req.query.maxPrice)
+    if (+req.query.maxPrice > 0) {
+      search.price.$lte = parseFloat(+req.query.maxPrice)
     }
   }
 
-  if (req.query.inStock) {
+  if (req.query.inStock === 'on') {
     search.countInStock = { $gt: 0 }
   }
 
@@ -41,7 +41,14 @@ const searchProducts = asyncHandler(async (req, res) => {
 
   const pages = Math.ceil(count / pageSize)
 
-  const sortCriteria = req.query.sortBy === 'asc' ? { price: 1 } : { price: -1 }
+  let sortCriteria = {}
+  if (req.query.sortBy === 'asc') {
+    sortCriteria = { price: -1 }
+  } else if (req.query.sortBy === 'desc') {
+    sortCriteria = { price: 1 }
+  } else {
+    sortCriteria = {}
+  }
 
   const products = await Product.find({ ...search })
     .sort(sortCriteria)
