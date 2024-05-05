@@ -40,7 +40,7 @@ Rename `.env.example` to `.env` in both frontend & backend folders and add your 
 
 ### Install Dependencies
 
-Open your terminal
+Open a terminal
 
 ```
 cd backend
@@ -52,22 +52,25 @@ npm install
 
 ### Seed Database
 
-In backend directory
+Open a terminal
 
 ```
+cd backend
 npm run seed
 ```
 
 ### Run
 
-Open your terminal in backend directory
+Open a terminal
 
 ```
+cd backend
 npm run dev
 ```
 
-Open a new terminal in frontend directory
+Open a new terminal
 
 ```
+cd frontend
 npm run dev
 ```
