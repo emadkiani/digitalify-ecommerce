@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux'
 import { Container } from 'react-bootstrap'
 import { ToastContainer } from 'react-toastify'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const Layout = () => {
   const dispatch = useDispatch()
