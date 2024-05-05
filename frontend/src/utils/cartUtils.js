@@ -1,57 +1,76 @@
-import calcPrices from './calcPrices'
+import { calcPrices } from './calcPrices'
 
-class Cart {
-  constructor(state, action) {
-    this.state = state
-    this.action = action
-  }
+const addItems = (state, action) => {
+  const { rating, numReviews, reviews, ...item } = action.payload
 
-  addItems() {
-    const { rating, numReviews, reviews, ...item } = this.action.payload
+  const addedItem = state.cartItems.find((itm) => itm._id === item._id)
 
-    const addedItem = this.state.cartItems.find((itm) => itm._id === item._id)
-
-    if (addedItem) {
-      this.state.cartItems = this.state.cartItems.map((itm) =>
-        itm._id === addedItem._id ? item : itm
-      )
-    } else {
-      this.state.cartItems = [...this.state.cartItems, item]
-    }
-  }
-
-  removeItems() {
-    this.state.cartItems = this.state.cartItems.filter(
-      (item) => item._id !== this.action.payload
+  if (addedItem) {
+    state.cartItems = state.cartItems.map((itm) =>
+      itm._id === addedItem._id ? item : itm
     )
-  }
-
-  updateDetails() {
-    const { itemsPrice, taxPrice, shippingPrice, totalPrice } = calcPrices(
-      this.state.cartItems
-    )
-
-    this.state.itemsPrice = itemsPrice
-    this.state.taxPrice = taxPrice
-    this.state.shippingPrice = shippingPrice
-    this.state.totalPrice = totalPrice
-  }
-
-  addShippingAddress() {
-    this.state.shippingAddress = this.action.payload
-  }
-
-  addPaymentMethod() {
-    this.state.paymentMethod = this.action.payload
-  }
-
-  clearItems() {
-    this.state.cartItems = []
-  }
-
-  saveToLocalStorage() {
-    localStorage.setItem('cart', JSON.stringify(this.state))
+  } else {
+    state.cartItems = [...state.cartItems, item]
   }
 }
 
-export default Cart
+const removeItems = (state, action) => {
+  state.cartItems = state.cartItems.filter(
+    (item) => item._id !== action.payload
+  )
+}
+
+const updateDetails = (state, action) => {
+  const { itemsPrice, taxPrice, shippingPrice, totalPrice } = calcPrices(
+    state.cartItems
+  )
+
+  state.itemsPrice = itemsPrice
+  state.taxPrice = taxPrice
+  state.shippingPrice = shippingPrice
+  state.totalPrice = totalPrice
+}
+
+const addShippingAddress = (state, action) => {
+  state.shippingAddress = action.payload
+}
+
+const addPaymentMethod = (state, action) => {
+  state.paymentMethod = action.payload
+}
+
+const clearItems = (state, action) => {
+  state.cartItems = []
+}
+
+const saveToLocalStorage = (state, action) => {
+  localStorage.setItem('cart', JSON.stringify(state))
+}
+
+export const addItemsToCart = (state, action) => {
+  addItems(state, action)
+  updateDetails(state, action)
+  saveToLocalStorage(state, action)
+}
+
+export const removeItemsFromCart = (state, action) => {
+  removeItems(state, action)
+  updateDetails(state, action)
+  saveToLocalStorage(state, action)
+}
+
+export const saveUserShippingAddress = (state, action) => {
+  addShippingAddress(state, action)
+  saveToLocalStorage(state, action)
+}
+
+export const saveUserPaymentMethod = (state, action) => {
+  addPaymentMethod(state, action)
+  saveToLocalStorage(state, action)
+}
+
+export const clearUserCartItems = (state, action) => {
+  clearItems(state, action)
+  updateDetails(state, action)
+  saveToLocalStorage(state, action)
+}

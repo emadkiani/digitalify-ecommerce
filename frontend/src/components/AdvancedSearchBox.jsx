@@ -1,9 +1,11 @@
 import { Form, Button } from 'react-bootstrap'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 
 import { useGetCategoriesQuery } from '../tools/categoriesApiSlice'
 
 const AdvancedSearchBox = () => {
+  const navigate = useNavigate()
+
   const [searchParams, setSearchParams] = useSearchParams({
     keyword: '',
     page: '',
@@ -19,10 +21,12 @@ const AdvancedSearchBox = () => {
     const formData = new FormData(event.currentTarget)
     const keyword = formData.get('keyword').trim()
     const categoryId = formData.get('category-id')
-    const maxPrice = +formData.get('max-price')
-    const minPrice = +formData.get('min-price')
+    const maxPrice = formData.get('max-price')
+    const minPrice = formData.get('min-price')
     const sortBy = formData.get('sort-by')
     const inStock = formData.get('in-stock')
+
+    navigate('/products')
 
     setSearchParams(
       (prev) => {

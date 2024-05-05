@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import Cart from '../utils/cartUtils'
+import {
+  addItemsToCart,
+  removeItemsFromCart,
+  saveUserShippingAddress,
+  saveUserPaymentMethod,
+  clearUserCartItems,
+} from '../utils/cartUtils'
 
 const initialCartState = localStorage.getItem('cart')
   ? JSON.parse(localStorage.getItem('cart'))
@@ -11,37 +17,19 @@ const cartSlice = createSlice({
   initialState: initialCartState,
   reducers: {
     addToCart: (state, action) => {
-      const cart = new Cart(state, action)
-
-      cart.addItems()
-      cart.updateDetails()
-      cart.saveToLocalStorage()
+      addItemsToCart(state, action)
     },
     removeFromCart: (state, action) => {
-      const cart = new Cart(state, action)
-
-      cart.removeItems()
-      cart.updateDetails()
-      cart.saveToLocalStorage()
+      removeItemsFromCart(state, action)
     },
     saveShippingAddress: (state, action) => {
-      const cart = new Cart(state, action)
-
-      cart.addShippingAddress()
-      cart.saveToLocalStorage()
+      saveUserShippingAddress(state, action)
     },
     savePaymentMethod(state, action) {
-      const cart = new Cart(state, action)
-
-      cart.addPaymentMethod()
-      cart.saveToLocalStorage()
+      saveUserPaymentMethod(state, action)
     },
     clearCartItems: (state, action) => {
-      const cart = new Cart(state, action)
-
-      cart.clearItems()
-      cart.updateDetails()
-      cart.saveToLocalStorage()
+      clearUserCartItems(state, action)
     },
     resetCart: (state) => (state = initialCartState),
   },

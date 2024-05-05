@@ -1,8 +1,8 @@
-const addDecimals = (num) => {
+export const addDecimals = (num) => {
   return (Math.round(num * 100) / 100).toFixed(2)
 }
 
-const calcPrices = (orderItems) => {
+export const calcPrices = (orderItems) => {
   const itemsPrice = orderItems.reduce(
     (acc, item) => acc + (item.salePrice * 100 * item.quantity) / 100,
     0
@@ -21,5 +21,3 @@ const calcPrices = (orderItems) => {
     totalPrice: addDecimals(totalPrice),
   }
 }
-
-export default calcPrices

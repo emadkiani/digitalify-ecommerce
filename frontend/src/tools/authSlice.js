@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import Auth from '../utils/authUtils'
+import { setAuthCredentials, logoutUser } from '../utils/authUtils'
 
 const initialState = {
   userInfo: localStorage.getItem('userInfo')
@@ -13,14 +13,10 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setCredentials: (state, action) => {
-      const auth = new Auth(state, action)
-
-      auth.setCredentials()
+      setAuthCredentials(state, action)
     },
     logout: (state, action) => {
-      const auth = new Auth(state, action)
-
-      auth.logout()
+      logoutUser(state, action)
     },
   },
 })

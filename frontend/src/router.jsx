@@ -5,8 +5,8 @@ import {
 } from 'react-router-dom'
 
 import Layout from './Layout'
-import ProtectPrivateRoute from './routes/ProtectPrivateRoute'
-import ProtectAdminRoute from './routes/ProtectAdminRoute'
+import ProtectPrivateRoute from './components/protect/ProtectPrivateRoute'
+import ProtectAdminRoute from './components/protect/ProtectAdminRoute'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'

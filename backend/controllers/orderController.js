@@ -1,7 +1,7 @@
 import asyncHandler from '../middleware/asyncHandler.js'
 import Order from '../models/orderModel.js'
 import Product from '../models/productModel.js'
-import calcPrices from '../utils/calcPrices.js'
+import { calcPrices } from '../utils/calcPrices.js'
 
 const getUserOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id }).sort({

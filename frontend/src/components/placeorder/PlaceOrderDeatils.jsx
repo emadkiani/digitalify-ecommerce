@@ -52,7 +52,7 @@ const PlaceOrderDeatils = ({ shippingAddress, paymentMethod, cartItems }) => {
                   <Col
                     className='mb-3'
                     md={4}>
-                    {`${item.quantity}x $${item.salePrice.toFixed(2)}`}
+                    {`${item.quantity}x $${item.salePrice}`}
                   </Col>
                 </Row>
               </ListGroup.Item>
