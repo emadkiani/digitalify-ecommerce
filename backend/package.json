@@ -1,7 +1,7 @@
 {
   "name": "digitalify-api",
   "description": "ecommerce api built with node.js & express.js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "app.js",
   "scripts": {
